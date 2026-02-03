@@ -33,7 +33,7 @@ class CPUPlayer
     public ArrayList<Move> getNextMoveMinMax(Board board) {
         numExploredNodes = 0;
         
-        ArrayList<Move> availableMoves = board.getPossibleMoves(); 
+        ArrayList<Move> availableMoves = board.getAvailableMoves(); 
         
         int bestScore = Integer.MIN_VALUE;
         ArrayList<Move> bestMoves = new ArrayList<Move>();

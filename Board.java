@@ -30,7 +30,7 @@ class Board
 
     }
 
-    public ArratList<Move> getAvailableMoves(){
+    public ArrayList<Move> getAvailableMoves(){
         ArrayList<Move> availableMoves = new ArrayList<Move>();
         for(int i = 0; i < 3; i++){ //Lignes
             for(int j = 0; j < 3; j++){ //Colonnes
@@ -90,5 +90,20 @@ class Board
             }
         }
         return 0;
+    }
+
+    // Affiche le plateau de jeu dans la console
+    public void print() {
+        for (int i = 0; i < 3; i++) {
+            System.out.print("| ");
+            for (int j = 0; j < 3; j++) {
+                char symbol = ' ';
+                if (board[i][j] == Mark.X) symbol = 'X';
+                else if (board[i][j] == Mark.O) symbol = 'O';
+                
+                System.out.print(symbol + " | ");
+            }
+            System.out.println("\n-------------");
+        }
     }
 }
