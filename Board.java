@@ -30,6 +30,18 @@ class Board
 
     }
 
+    public ArratList<Move> getAvailableMoves(){
+        ArrayList<Move> availableMoves = new ArrayList<Move>();
+        for(int i = 0; i < 3; i++){ //Lignes
+            for(int j = 0; j < 3; j++){ //Colonnes
+                if(board[i][j] == Mark.EMPTY){
+                    availableMoves.add(new Move(i, j));
+                }
+            }
+        }
+        return availableMoves;
+    }
+
     private boolean hasWon(Mark mark){
         //Vérifier les lignes
         for(int i = 0; i < 3; i++){
