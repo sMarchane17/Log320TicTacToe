@@ -112,7 +112,7 @@ class CPUPlayer
         for(Move move : availableMoves){
             board.play(move, isMax ? cpuMark : (cpuMark == Mark.X ? Mark.O : Mark.X));
             int currentScore = minMax(board, !isMax);
-            board.play(move, Mark.EMPTY); // Revert the move
+            board.play(move, Mark.EMPTY);
             if(isMax){
                 bestScore = Math.max(bestScore, currentScore);
             }
